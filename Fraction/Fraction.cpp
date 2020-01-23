@@ -84,7 +84,7 @@ Fraction::Fraction(int n1) : num(n1), den(1) {
 // constructor for setting numerator and denominator to the inputted numbers
 Fraction::Fraction(int n1, int n2) {
 	if (n2 == 0) {
-		throw exception("Denominator cannot be 0");
+		throw std::exception("Denominator cannot be 0");
 	}
 	int divisor = gcd(abs(n1), abs(n2));//absolute value means positive number of the value
 	if (n2 < 0) {
@@ -205,12 +205,12 @@ bool operator>(const Fraction& n1, const Fraction& n2) {
 	return (n1.numerator() * n2.denominator()) > (n2.numerator() * n1.denominator());
 }
 // << operator
-ostream& operator<<(ostream& out, const Fraction& e) {
+std::ostream& operator<<(std::ostream& out, const Fraction& e) {
 	out << e.numerator() << "/" << e.denominator();
 	return out;
 }
 // >> operator
-istream& operator>>(istream& in, Fraction& fra) {
+std::istream& operator>>(std::istream& in, Fraction& fra) {
 
 	int top, bottom;
 	in >> top;

@@ -42,8 +42,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Fraction {
 public:
 	Fraction(); // constructor for (0/1)
@@ -76,8 +74,8 @@ public:
 	friend bool operator>=(const Fraction& n1, const Fraction& n2); // >= comparison operator
 	friend bool operator>(const Fraction& n1, const Fraction& n2); // > comparison operator
 
-	friend ostream& operator<<(ostream& out, const Fraction& e); // << operator
-	friend istream& operator>>(istream& in, Fraction& retFrac); // >> operator
+	friend std::ostream& operator<<(std::ostream& out, const Fraction& e); // << operator
+	friend std::istream& operator>>(std::istream& in, Fraction& retFrac); // >> operator
 
 private:
 	int num; // numerator
